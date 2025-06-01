@@ -9,37 +9,71 @@
 <body>
   <!-- Scene Container -->
   <div id="scene-container">
-    <!-- Scene 1: Opening Scene -->
+    <!-- Scene 1: Opening Scene with Laptop Interface -->
     <div class="scene" id="scene-1">
-      <img src="images/laptop_static.png" alt="Laptop with AI Icon" class="scene-image" />
+      <div class="laptop-container">
+        <img src="images/laptop_frame.png" alt="Cartoon Laptop Frame" class="laptop-frame" />
+        <div class="laptop-screen" id="laptop-screen-1">
+          <img src="images/ai_icon.png" alt="AI Icon" class="ai-icon" id="ai-icon" />
+        </div>
+      </div>
       <div class="scene-text">
         <p>You’ve just received your school-issued AI Assistant! Click the icon to begin.</p>
-        <button id="start-button">Click AI Icon</button>
       </div>
     </div>
 
     <!-- Scene 2: Welcome Message -->
     <div class="scene" id="scene-2" style="display: none;">
-      <div class="chat-window">
-        <div class="chat-message ai">
-          <p>Hi there! I’m your new AI Assistant, provided by your school. My job is to help you understand how generative AI works and how we can collaborate effectively.</p>
+      <div class="laptop-container">
+        <img src="images/laptop_frame.png" alt="Cartoon Laptop Frame" class="laptop-frame" />
+        <div class="laptop-screen" id="laptop-screen-2">
+          <div class="chat-window">
+            <div class="chat-message ai">
+              <p>Hi there! I’m your new AI Assistant, provided by your school. My job is to help you understand how generative AI works and how we can collaborate effectively.</p>
+            </div>
+          </div>
         </div>
       </div>
       <button id="scene2-next">Next</button>
     </div>
 
-    <!-- Scene 3: How AI Works -->
+    <!-- Scene 3: How AI Works with Token Animation -->
     <div class="scene" id="scene-3" style="display: none;">
-      <img src="images/tokens_infographic.png" alt="Tokens Infographic" class="scene-image" />
+      <div class="laptop-container">
+        <img src="images/laptop_frame.png" alt="Cartoon Laptop Frame" class="laptop-frame" />
+        <div class="laptop-screen" id="laptop-screen-3">
+          <div class="token-animation-container" id="token-animation">
+            <div class="token" style="--i:0;">Did</div>
+            <div class="token" style="--i:1;">you</div>
+            <div class="token" style="--i:2;">know</div>
+            <div class="token" style="--i:3;">I</div>
+            <div class="token" style="--i:4;">process</div>
+            <div class="token" style="--i:5;">text</div>
+            <div class="token" style="--i:6;">by</div>
+            <div class="token" style="--i:7;">breaking</div>
+            <div class="token" style="--i:8;">sentences</div>
+            <div class="token" style="--i:9;">into</div>
+            <div class="token" style="--i:10;">small</div>
+            <div class="token" style="--i:11;">parts</div>
+            <div class="token" style="--i:12;">called</div>
+            <div class="token" style="--i:13;">'tokens'?</div>
+          </div>
+        </div>
+      </div>
       <div class="scene-text">
-        <p>Did you know I process text by breaking sentences into small parts called 'tokens'? I predict the next best word or phrase based on patterns learned from billions of examples.</p>
+        <p>I predict the next best word or phrase based on patterns learned from billions of examples.</p>
         <button id="scene3-next">Tell me more</button>
       </div>
     </div>
 
     <!-- Scene 4: Tokens, Weights, and Parameters -->
     <div class="scene" id="scene-4" style="display: none;">
-      <img src="images/weights_params_diagram.png" alt="Weights and Parameters Diagram" class="scene-image" />
+      <div class="laptop-container">
+        <img src="images/laptop_frame.png" alt="Cartoon Laptop Frame" class="laptop-frame" />
+        <div class="laptop-screen" id="laptop-screen-4">
+          <img src="images/weights_params_diagram.png" alt="Weights and Parameters Diagram" class="scene-image" />
+        </div>
+      </div>
       <div class="scene-text">
         <p>Each token has a 'weight' that helps me decide which token to select next. I rely on something called 'parameters'—think of these as my internal rulebook for making choices.</p>
         <button id="scene4-next">Okay, what's next?</button>
@@ -48,20 +82,30 @@
 
     <!-- Scene 5: Temperature Explained -->
     <div class="scene" id="scene-5" style="display: none;">
-      <div class="slider-container">
-        <label for="temp-slider">Temperature: </label>
-        <input type="range" id="temp-slider" min="0" max="100" value="50" />
-        <span id="temp-label">Medium (Balanced)</span>
-      </div>
-      <div class="temp-examples">
-        <p id="temp-example">The sky today is clear and bright.</p>
+      <div class="laptop-container">
+        <img src="images/laptop_frame.png" alt="Cartoon Laptop Frame" class="laptop-frame" />
+        <div class="laptop-screen" id="laptop-screen-5">
+          <div class="slider-container">
+            <label for="temp-slider">Temperature:</label>
+            <input type="range" id="temp-slider" min="0" max="100" value="50" />
+            <span id="temp-label">Medium (Balanced)</span>
+          </div>
+          <div class="temp-examples">
+            <p id="temp-example">The sky today is clear and bright.</p>
+          </div>
+        </div>
       </div>
       <button id="scene5-next" disabled>Understood</button>
     </div>
 
     <!-- Scene 6: Collaboration & Limitations -->
     <div class="scene" id="scene-6" style="display: none;">
-      <img src="images/student_typing.png" alt="Student Typing" class="scene-image" />
+      <div class="laptop-container">
+        <img src="images/laptop_frame.png" alt="Cartoon Laptop Frame" class="laptop-frame" />
+        <div class="laptop-screen" id="laptop-screen-6">
+          <img src="images/student_typing.png" alt="Student Typing" class="scene-image" />
+        </div>
+      </div>
       <div class="scene-text">
         <p>I’m great at providing ideas and information, but remember, I don't understand context like humans do. Use my ideas as inspiration, but always double-check facts and think critically about my responses.</p>
         <button id="scene6-next">Got it</button>
@@ -70,27 +114,37 @@
 
     <!-- Scene 7: Mini Quiz (Puzzle) -->
     <div class="scene" id="scene-7" style="display: none;">
-      <div class="quiz-container">
-        <p>Quick check! If you want creative storytelling ideas, should you set my temperature high or low?</p>
-        <button class="quiz-answer" data-answer="high">High</button>
-        <button class="quiz-answer" data-answer="low">Low</button>
+      <div class="laptop-container">
+        <img src="images/laptop_frame.png" alt="Cartoon Laptop Frame" class="laptop-frame" />
+        <div class="laptop-screen" id="laptop-screen-7">
+          <div class="quiz-container">
+            <p>Quick check! If you want creative storytelling ideas, should you set my temperature high or low?</p>
+            <button class="quiz-answer" data-answer="high">High</button>
+            <button class="quiz-answer" data-answer="low">Low</button>
+          </div>
+          <div class="quiz-feedback" id="quiz-feedback" style="display: none;"></div>
+        </div>
       </div>
-      <div class="quiz-feedback" id="quiz-feedback" style="display: none;"></div>
       <button id="scene7-next" disabled>Continue</button>
     </div>
 
     <!-- Scene 8: AI Reflection -->
     <div class="scene" id="scene-8" style="display: none;">
-      <div class="chat-window">
-        <div class="chat-message ai">
-          <p>Let's quickly reflect. What did you learn about how I generate responses?</p>
-        </div>
-        <textarea id="reflection-input" rows="4" placeholder="Type your reflection here..."></textarea>
-        <button id="reflection-submit">Submit</button>
-      </div>
-      <div id="reflection-response" class="chat-window" style="display: none;">
-        <div class="chat-message ai">
-          <p>Great reflection! You're getting the hang of how to collaborate effectively with AI.</p>
+      <div class="laptop-container">
+        <img src="images/laptop_frame.png" alt="Cartoon Laptop Frame" class="laptop-frame" />
+        <div class="laptop-screen" id="laptop-screen-8">
+          <div class="chat-window">
+            <div class="chat-message ai">
+              <p>Let's quickly reflect. What did you learn about how I generate responses?</p>
+            </div>
+            <textarea id="reflection-input" rows="4" placeholder="Type your reflection here..."></textarea>
+            <button id="reflection-submit">Submit</button>
+          </div>
+          <div id="reflection-response" class="chat-window" style="display: none;">
+            <div class="chat-message ai">
+              <p>Great reflection! You're getting the hang of how to collaborate effectively with AI.</p>
+            </div>
+          </div>
         </div>
       </div>
       <button id="scene8-next" style="display: none;">Continue</button>
@@ -98,7 +152,12 @@
 
     <!-- Scene 9: Closing -->
     <div class="scene" id="scene-9" style="display: none;">
-      <img src="images/farewell_graphic.png" alt="Farewell Graphic" class="scene-image" />
+      <div class="laptop-container">
+        <img src="images/laptop_frame.png" alt="Cartoon Laptop Frame" class="laptop-frame" />
+        <div class="laptop-screen" id="laptop-screen-9">
+          <img src="images/farewell_graphic.png" alt="Farewell Graphic" class="scene-image" />
+        </div>
+      </div>
       <div class="scene-text">
         <p>That's it for now! See you next time as we explore deeper topics like AI ethics, privacy, and more.</p>
         <button id="end-session">End session</button>
